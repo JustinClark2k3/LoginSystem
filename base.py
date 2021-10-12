@@ -4,7 +4,8 @@ This is a docstring
 import tkinter as tk
 
 class Info:
-    credentials = { "TestUsername" : "TestPassword" } 
+    usernames = { "Justin" : "JustinClark" }
+    passwords = { "Justin" : "Password" }
 
 '''
 Login class that talks to the tkinter api and adds widgets, binds keys, and styles widgets
@@ -12,30 +13,10 @@ Login class that talks to the tkinter api and adds widgets, binds keys, and styl
 class Login:
 
     def on_return_pressed(self, event):
+        print("return pressed!")
+
         username = self.stringvar_1.get()
-        password = self.stringvar_2.get()
-
-        if username not in self.info.credentials.keys():
-            print("Invalid Username")
-            return
-
-        if password not in self.info.credentials.values():
-            print("Invalid password")
-            return
-
-        print("You're in!")
-
-    def create_account(self, event):
-        uname = self.stringvar_1.get()
-        password = self.stringvar_2.get()
-
-        if uname not in self.info.credentials.keys() and password not in self.info.credentials.values():
-            self.info.credentials[uname] = password
-
-            print("Credentials: ")
-            print(self.info.credentials)
-        else:
-            print("Account already exists")
+        print(username)
 
     def __init__(self, master):
         self.master = master
@@ -43,7 +24,7 @@ class Login:
         self.info = Info()
 
         # Pre-Widget Window Modificatins
-        master.title("login here!")
+        master.title("login System :)")
         master.geometry("600x400")
 
         # Frame to house widgets
@@ -80,12 +61,7 @@ class Login:
 
         self.master.bind(
             '<Return>', lambda event: self.on_return_pressed(self))
-        
-        self.button_create.bind(
-            '<Button>', lambda event: self.create_account(self))
-            
-        self.button_submit.bind(
-            '<Button>', lambda event: self.on_return_pressed((self)))
+        #Bind Submit and Create Account buttons
 
 root = tk.Tk()
 login = Login(root)
