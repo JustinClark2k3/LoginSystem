@@ -36,7 +36,7 @@ class TkinterBase:
         self.stringvar_1 = tk.StringVar()
         self.stringvar_2 = tk.StringVar()
 
-        self.text_01 = tk.Entry(self.mainframe, textvariable=self.stringvar_1)
+        self.text_01 = tk.Entry(self.mainframe, textvariable=self.stringvar_1)jusin
         self.text_02 = tk.Entry(self.mainframe, textvariable=self.stringvar_2)
 
         # Set StringVars for Entries
