@@ -43,15 +43,21 @@ class TkinterBase:
         self.stringvar_1.set("Username")
         self.stringvar_2.set("Password")
 
+        ### Packing to fit the display
+
+        # Username Widgets
         self.label_01.pack(expand=True)
         self.text_01.pack(expand=True)
 
+        # Password Widgets
         self.label_02.pack(expand=True)
         self.text_02.pack(expand=True)
 
+        # Submit + Create buttons
         self.button_submit.pack(expand=True)
         self.button_create.pack(expand=True)
 
+        # Tk Frame
         self.mainframe.pack(padx=200, pady=100)
 
         #self.master.bind(

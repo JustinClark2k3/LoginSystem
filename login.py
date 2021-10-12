@@ -1,6 +1,9 @@
 import tkinter_base as tkBase
 
 class Login(tkBase.TkinterBase):
+    
+    credentials = { "TestUsername" : "TestPassword" }
+
     def on_return_pressed(self, event):
         username = self.stringvar_1.get()
         password = self.stringvar_2.get()
