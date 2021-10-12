@@ -9,35 +9,10 @@ class Info:
 '''
 Login class that talks to the tkinter api and adds widgets, binds keys, and styles widgets
 '''
-class Base:
-
-    def on_return_pressed(self, event):
-        username = self.stringvar_1.get()
-        password = self.stringvar_2.get()
-
-        if username not in self.info.credentials.keys():
-            print("Invalid Username")
-            return
-
-        if password not in self.info.credentials.values():
-            print("Invalid password")
-            return
-
-        print("You're in!")
-
-    def create_account(self, event):
-        uname = self.stringvar_1.get()
-        password = self.stringvar_2.get()
-
-        if uname not in self.info.credentials.keys() and password not in self.info.credentials.values():
-            self.info.credentials[uname] = password
-
-            print("Credentials: ")
-            print(self.info.credentials)
-        else:
-            print("Account already exists")
-
+class TkinterBase:
     def __init__(self, master):
+        print("tkinter_base Initialized")
+
         self.master = master
 
         self.info = Info()
@@ -55,6 +30,7 @@ class Base:
 
         self.button_submit = tk.Button(self.mainframe, text="Submit")
         self.button_create = tk.Button(self.mainframe, text="Create Account")
+        self.button_exit = tk.Button(self.mainframe, text="Exit", command=lambda event: self.master.destroy())
 
         # StringVar types for Entries
         self.stringvar_1 = tk.StringVar()
@@ -78,15 +54,15 @@ class Base:
 
         self.mainframe.pack(padx=200, pady=100)
 
-        self.master.bind(
-            '<Return>', lambda event: self.on_return_pressed(self))
+        #self.master.bind(
+        #    '<Return>', lambda event: self.on_return_pressed(self))
         
-        self.button_create.bind(
-            '<Button>', lambda event: self.create_account(self))
+        #self.button_create.bind(
+        #    '<Button>', lambda event: self.create_account(self))
             
-        self.button_submit.bind(
-            '<Button>', lambda event: self.on_return_pressed((self)))
+        #self.button_submit.bind(
+        #    '<Button>', lambda event: self.on_return_pressed((self)))
 
 root = tk.Tk()
-base = Base(root)
+TkinterBase(root)
 root.mainloop()
