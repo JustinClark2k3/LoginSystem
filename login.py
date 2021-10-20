@@ -7,8 +7,12 @@ class Login():
             self.create_account(p_username, p_password)
             return
 
-        # username = self.stringvar_1.get()
-        # password = self.stringvar_2.get()
+        username = self.stringvar_1.get()
+        password = self.stringvar_2.get()
+
+        if username not in self.credentials.items():
+            print("Invalid Credentials!")
+            return
 
         # if username not in self.credentials.keys():
         #     print("Invalid Username")
