@@ -2,14 +2,12 @@
 This is a docstring
 '''
 import tkinter as tk
+from tkinter import ttk
 
 class Info:
     usernames = { "Justin" : "JustinClark" }
     passwords = { "Justin" : "Password" }
 
-'''
-Login class that talks to the tkinter api and adds widgets, binds keys, and styles widgets
-'''
 class Login:
 
     def on_return_pressed(self, event):
